@@ -1,9 +1,9 @@
-import Test from "../../components/dev/Test";
+import Home from "./home";
 
 const HomePage = () => {
   return (
     <div>
-      <Test />
+      <Home />
     </div>
   );
 };
