@@ -4,7 +4,10 @@ const NavigationButtons = () => {
   return (
     <div className=" space-y-5 mx-auto">
       {/* home btn  */}
-      <div className="w-[38px] h-[38px] relative">
+      <div className="w-[38px] h-[38px] relative cursor-pointer group">
+        <p className=" hidden absolute left-11 px-2 py-1 top-[3px] bg-green-600 rounded-xl font-medium text-white   group-hover:block">
+          Home
+        </p>
         <div className="w-[38px] h-[38px] left-0 top-0 absolute bg-slate-100 rounded-full" />
         <div className="w-5 h-5 left-[9px] top-[9px] absolute">
           <div className="w-5 h-5 left-0 top-0 absolute ">
@@ -19,7 +22,10 @@ const NavigationButtons = () => {
       </div>
 
       {/* menu btn  */}
-      <div className="w-[38px] h-[38px] relative">
+      <div className="w-[38px] h-[38px] relative cursor-pointer group">
+        <p className=" hidden absolute left-11 px-2 py-1 top-[3px] bg-green-600 rounded-xl font-medium text-white   group-hover:block">
+          All Dua
+        </p>
         <div className="w-[38px] h-[38px] left-0 top-0 absolute bg-slate-100 rounded-full" />
         <div className="w-5 h-5 left-[9px] top-[9px] absolute">
           <div className="w-5 h-5 left-0 top-0 absolute ">
@@ -34,7 +40,10 @@ const NavigationButtons = () => {
       </div>
 
       {/* memorize btn  */}
-      <div className="w-[38px] h-[38px] relative">
+      <div className="w-[38px] h-[38px] relative cursor-pointer group">
+        <p className=" hidden absolute left-11 px-2 py-1 top-[3px] bg-green-600 rounded-xl font-medium text-white   group-hover:block">
+          Memorize
+        </p>
         <div className="w-[38px] h-[38px] left-0 top-0 absolute bg-slate-100 rounded-full" />
         <div className="w-5 h-5 left-[9px] top-[9px] absolute">
           <div className="w-5 h-5 left-0 top-0 absolute ">
@@ -49,7 +58,10 @@ const NavigationButtons = () => {
       </div>
 
       {/* saved btn  */}
-      <div className="w-[38px] h-[38px] relative">
+      <div className="w-[38px] h-[38px] relative cursor-pointer group">
+        <p className=" hidden absolute left-11 px-2 py-1 top-[3px] bg-green-600 rounded-xl font-medium text-white   group-hover:block">
+          Bookmark
+        </p>
         <div className="w-[38px] h-[38px] left-0 top-0 absolute bg-slate-100 rounded-full" />
         <div className="w-5 h-5 left-[9px] top-[9px] absolute">
           <div className="w-5 h-5 left-0 top-0 absolute ">
@@ -63,8 +75,11 @@ const NavigationButtons = () => {
         </div>
       </div>
 
-      {/* riqyah btn  */}
-      <div className="w-[38px] h-[38px] relative">
+      {/* Ruqyah btn  */}
+      <div className="w-[38px] h-[38px] relative cursor-pointer group">
+        <p className=" hidden absolute left-11 px-2 py-1 top-[3px] bg-green-600 rounded-xl font-medium text-white   group-hover:block">
+          Ruqyah
+        </p>
         <div className="w-[38px] h-[38px] left-0 top-0 absolute bg-slate-100 rounded-full" />
         <div className="w-5 h-5 left-[9px] top-[9px] absolute">
           <div className="w-5 h-5 left-0 top-0 absolute ">
@@ -79,7 +94,10 @@ const NavigationButtons = () => {
       </div>
 
       {/* dua-info btn  */}
-      <div className="w-[38px] h-[38px] relative">
+      <div className="w-[38px] h-[38px] relative cursor-pointer group">
+        <p className=" hidden absolute left-11 px-2 py-1 top-[3px] bg-green-600 rounded-xl font-medium text-white   group-hover:block">
+          Books
+        </p>
         <div className="w-[38px] h-[38px] left-0 top-0 absolute bg-slate-100 rounded-full" />
         <div className="w-5 h-5 left-[9px] top-[9px] absolute">
           <div className="w-5 h-5 left-0 top-0 absolute ">
@@ -94,7 +112,10 @@ const NavigationButtons = () => {
       </div>
 
       {/* book btn  */}
-      <div className="w-[38px] h-[38px] relative">
+      <div className="w-[38px] h-[38px] relative cursor-pointer group">
+        <p className=" hidden absolute left-11 px-2 py-1 top-[3px] bg-green-600 rounded-xl font-medium text-white   group-hover:block">
+          Books
+        </p>
         <div className="w-[38px] h-[38px] left-0 top-0 absolute bg-slate-100 rounded-full" />
         <div className="w-5 h-5 left-[9px] top-[9px] absolute">
           <div className="w-5 h-5 left-0 top-0 absolute ">
