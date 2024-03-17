@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useState } from "react";
 
 const RightSidebar = () => {
+  const [activeTab, setActiveTab] = useState(false);
+
   return (
     <div className="w-[300px] h-[812px] col-span-2">
       {/* user profile  */}
@@ -92,7 +95,16 @@ const RightSidebar = () => {
         </div>
 
         {/* Appearance settings */}
-        <div className="w-64 h-14 bg-[#F7F8FA] mx-auto flex items-center gap-3 mt-6  relative border-l-[5px]  rounded-md border-green-600 ">
+        <div
+          className={
+            activeTab === true
+              ? " cursor-pointer w-64 h-14 bg-[#F7F8FA] mx-auto flex items-center gap-3 mt-6 relative border-l-[5px]  rounded-md border-green-600 "
+              : " cursor-pointer w-64 h-14 bg-[#F7F8FA] mx-auto flex items-center gap-3 mt-6 relative text-zinc-500 text-base font-normal font-['Inter']"
+          }
+          onClick={() => {
+            setActiveTab(!activeTab);
+          }}
+        >
           <div className="ms-4">
             {/* img background  */}
             <Image
@@ -103,35 +115,40 @@ const RightSidebar = () => {
               alt="language icon"
             />
             <Image
-              className="absolute top-4 left-[-10] "
-              src="/assets/apprance-icon.png"
+              className="absolute top-4 left-[-10]"
+              src="/assets/font-set.png"
               width={24}
               height={24}
               alt="language icon"
             />
           </div>
-
-          <div>
-            <div className="text-green-600 text-base font-medium font-['Inter']  ">
-              Appearance Settings
-            </div>
+          <div
+            className={
+              activeTab === true
+                ? "text-green-600 text-base font-medium font-['Inter']"
+                : ""
+            }
+          >
+            Appearance Settings
           </div>
         </div>
 
         {/* night mode  */}
-        <div className="w-64 h-[97px] mx-auto bg-white rounded-[5px] border border-neutral-200  border-t-0 flex justify-between items-center">
-          <div className="text-neutral-700 text-base font-normal font-Inter ml-4">
-            Night Mode
+        {activeTab && (
+          <div className="w-64 h-[97px] mx-auto bg-white rounded-[5px] border border-neutral-200  border-t-0 flex justify-between items-center">
+            <div className="text-neutral-700 text-base font-normal font-Inter ml-4">
+              Night Mode
+            </div>
+            <div className=" mr-4">
+              <Image
+                src="/assets/toggle-mode.png"
+                width={24}
+                height={24}
+                alt="language icon"
+              />
+            </div>
           </div>
-          <div className=" mr-4">
-            <Image
-              src="/assets/toggle-mode.png"
-              width={24}
-              height={24}
-              alt="language icon"
-            />
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
