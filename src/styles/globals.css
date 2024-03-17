@@ -32,6 +32,20 @@ body {
   list-style: none;
 }
 
+.font-arabic {
+  font-family: me_quran;
+  word-spacing: 8px;
+}
+
+.scrollbar-light::-webkit-scrollbar-track-piece {
+  background: white;
+}
+
+@font-face {
+  font-family: me_quran;
+  src: url("/fonts/me_quran Regular.ttf");
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

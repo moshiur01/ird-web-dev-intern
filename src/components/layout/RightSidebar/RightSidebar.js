@@ -9,7 +9,7 @@ const RightSidebar = () => {
       {/* user profile  */}
       <div className="w-[67.50px] h-[45px] ml-auto mb-8  ">
         <div className="flex  gap-2 ">
-          <Image src="/assets/vector.png" alt="avatar" width={45} height={45} />
+          <Image src="/assets/avatar.png" alt="avatar" width={45} height={45} />
           <div className="my-auto">
             <Image
               src="/assets/Polygon.png"
@@ -136,10 +136,10 @@ const RightSidebar = () => {
         {/* night mode  */}
         {activeTab && (
           <div className="w-64 h-[97px] mx-auto bg-white rounded-[5px] border border-neutral-200  border-t-0 flex justify-between items-center">
-            <div className="text-neutral-700 text-base font-normal font-Inter ml-4">
+            <div className="text-gray-400 text-base font-semibold ml-4">
               Night Mode
             </div>
-            <div className=" mr-4">
+            <div className=" mr-4 cursor-pointer">
               <Image
                 src="/assets/toggle-mode.png"
                 width={24}

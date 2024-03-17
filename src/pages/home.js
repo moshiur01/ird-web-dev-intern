@@ -1,5 +1,7 @@
 import LeftSidebar from "@/components/layout/LeftSideBar/LeftSidebar";
 import RightSidebar from "@/components/layout/RightSidebar/RightSidebar";
+import Category from "@/components/layout/body/Category";
+import TopBar from "@/components/layout/body/Topbar";
 
 const Home = () => {
   return (
@@ -9,7 +11,10 @@ const Home = () => {
         <LeftSidebar />
 
         {/* body  */}
-        <div className="bg-cyan-200 col-span-9">body</div>
+        <div className="col-span-9">
+          <TopBar />
+          <Category />
+        </div>
 
         {/* right side bar  */}
         <RightSidebar />
