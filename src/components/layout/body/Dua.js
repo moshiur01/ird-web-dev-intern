@@ -1,8 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
+import toast, { Toaster } from "react-hot-toast";
 const Dua = ({ catId }) => {
+  // toast
+  const notify = () => toast("copied");
+  //copy to clipboard
+  const copyToClipboard = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      notify();
+    } catch (error) {
+      alert("Error copying to clipboard:", error);
+    }
+  };
+
   //get specific sub category of each category
   const [duaByCategory, setDuaByCategory] = useState([]);
 
@@ -81,7 +93,7 @@ const Dua = ({ catId }) => {
             {/* other action btn  */}
             <div className="flex justify-between gap-8">
               {/* copy btn  */}
-              <button>
+              <button onClick={() => copyToClipboard(dua?.translation_en)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -196,6 +208,7 @@ const Dua = ({ catId }) => {
           </div>
         </div>
       ))}
+      <Toaster position="bottom-center" reverseOrder={false} />
     </>
   );
 };

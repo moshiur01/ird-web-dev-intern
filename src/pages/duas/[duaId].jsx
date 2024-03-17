@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const DuaDetails = ({ allCategories }) => {
   const router = useRouter();
-  const catId = router.query.cat;
+  const catId = router?.query?.cat;
 
   return (
     <div className="m-12">
