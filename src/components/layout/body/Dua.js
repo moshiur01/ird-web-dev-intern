@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 const Dua = ({ catId }) => {
   // toast
-  const notify = () => toast("copied");
+  const notify = () => toast.success("copied");
   //copy to clipboard
   const copyToClipboard = async (text) => {
     try {
