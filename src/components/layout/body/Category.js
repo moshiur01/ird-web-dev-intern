@@ -1,12 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import Dua from "./Dua";
 import SubCat from "./SubCat";
 
-const Category = () => {
-  const [duaCategoryView, setDuaCategoryView] = useState("0");
+const Category = ({ allCategories, catId }) => {
+  const [categoryDropdown, setCategoryDropdown] = useState(1);
 
+  const [selectedCategoryId, setSelectedCategoryId] = useState(1);
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategoryId(categoryId);
+  };
   return (
     <div className="grid grid-cols-4 gap-6 mt-5">
       {/* category column  */}
@@ -50,39 +55,62 @@ const Category = () => {
         </div>
 
         <div className="2xl:h-[71vh] overflow-y-scroll scrollbar-light">
-          {/* Category map  start  */}
-          <div className="ml-3 mr-2">
-            <button
-              className={
-                duaCategoryView === "0"
-                  ? "bg-[#e8f0f5] p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
-                  : "bg-white p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
-              }
-              onClick={() => {
-                setDuaCategoryView("0");
-              }}
-            >
-              <div className="bg-[#f7f8fa] flex items-center justify-center p-2 rounded-lg">
-                <Image
-                  src="/icons/duar_gurutto.svg"
-                  alt="Logo"
-                  width={100}
-                  height={100}
-                  className="w-9"
+          {/* Category map  start */}
+
+          {allCategories?.map((category) => (
+            <>
+              <div key={category?.id} className="ml-3 mr-2">
+                <Link
+                  href={`/duas/${category?.cat_name_en}?cat=${category?.id}`}
+                  key={category?.id}
+                >
+                  <button
+                    className={
+                      categoryDropdown === category?.id
+                        ? "bg-[#e8f0f5] p-3 rounded-xl flex gap-2 w-[280px] justify-between items-center"
+                        : "bg-white p-3 rounded-xl flex gap-2 w-[280px] justify-between  items-center hover:bg-[#e8f0f5]"
+                    }
+                    onClick={() => {
+                      setCategoryDropdown(category?.id);
+                      handleCategoryClick(category?.id);
+                    }}
+                  >
+                    <div className="bg-[#f7f8fa] flex items-center justify-center p-2 rounded-lg">
+                      <Image
+                        src="/icons/duar_gurutto.svg"
+                        alt="Logo"
+                        width={100}
+                        height={100}
+                        className="w-9"
+                      />
+                    </div>
+                    <div className="">
+                      <p className="font-medium">{category?.cat_name_en}</p>
+                      <p className="text-xs mt-1 text-gray-500">
+                        Subcategory: {category?.no_of_subcat}
+                      </p>
+                    </div>
+                    <div className="h-full border-l-2 hidden 2xl:block pl-2">
+                      <p className="font-medium text-center">
+                        {category?.no_of_dua}
+                      </p>
+                      <p className="text-xs  text-center mt-1 text-gray-500">
+                        Duas
+                      </p>
+                    </div>
+                  </button>
+                </Link>
+
+                <SubCat
+                  openDropdown={
+                    categoryDropdown === category?.id ? true : false
+                  }
+                  catId={selectedCategoryId}
                 />
               </div>
-              <div className="col-span-3">
-                <p className="font-medium">Dua's Importance</p>
-                <p className="text-xs mt-1 text-gray-500">Subcategory: 7</p>
-              </div>
-              <div className="h-full border-l-2 hidden 2xl:block">
-                <p className="font-medium text-center">21</p>
-                <p className="text-xs  text-center mt-1 text-gray-500">Duas</p>
-              </div>
-            </button>
+            </>
+          ))}
 
-            <SubCat openState={duaCategoryView === "0" ? true : false} />
-          </div>
           {/* Category  map End */}
         </div>
       </div>
@@ -94,7 +122,7 @@ const Category = () => {
           The servant is dependent on his Lord
         </div>
 
-        <Dua />
+        <Dua catId={catId} />
       </div>
     </div>
   );
